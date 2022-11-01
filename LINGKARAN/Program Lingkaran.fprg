@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.6">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="RAHMATUSSAWAL H"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-10-31 11:47:33 AM"/>
+        <attribute name="created" value="UkFITUFUVVNTQVdBTCBIOyBSSE1ULVBDOyAyMDIyLTEwLTE4OyAxMDozNTozOSBQTTsgMjk3Nw=="/>
+        <attribute name="edited" value="UkFITUFUVVNTQVdBTCBIOyBSSE1ULVBDOyAyMDIyLTEwLTMxOyAxMTo0NzozMyBBTTsgMjk1NQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="mulai, jari, luas, keliling" type="Integer" array="False" size=""/>
+            <output expression="&quot;MENCARI LINGKARAN&quot;"/>
+            <output expression="&quot;1. LUAS LINGKARAN&quot;"/>
+            <output expression="&quot;1. KELILING LINGKARAN&quot;"/>
+            <input variable="mulai"/>
+            <if expression="mulai&lt;=1">
+                <then>
+                    <output expression="&quot;LUAS LINGKARAN&quot;"/>
+                    <output expression="&quot;Masukan Jari-Jari Lingkaran&quot;"/>
+                    <input variable="jari"/>
+                    <output expression="&quot;RUMUS : (L = 22/7 x jari x jari)&quot;"/>
+                    <assign variable="luas" expression="22/7*jari*jari"/>
+                    <output expression="&quot;L = 22/7 x &quot;&amp;jari&amp;&quot; x &quot;&amp;jari"/>
+                    <output expression="&quot;L = &quot;&amp;luas&amp;&quot; cm&quot;"/>
+                    <output expression="&quot;Jadi, Luas Lingkaran Adalah &quot;&amp;luas&amp;&quot; cm&quot;"/>
+                </then>
+                <else>
+                    <output expression="&quot;KELILING LINGKARAN&quot;"/>
+                    <output expression="&quot;Masukan Jari-Jari Lingkaran&quot;"/>
+                    <input variable="jari"/>
+                    <output expression="&quot;RUMUS : (K = 2 x 22/7 x jari)&quot;"/>
+                    <assign variable="keliling" expression="2*22/7*jari"/>
+                    <output expression="&quot;K = 2 x 22/7 x &quot;&amp;jari"/>
+                    <output expression="&quot;K = &quot;&amp;keliling&amp;&quot; cm&quot;"/>
+                    <output expression="&quot;Jadi, Keliling Lingkaran Adalah &quot;&amp;keliling&amp;&quot; cm&quot;"/>
+                </else>
+            </if>
+            <output expression="&quot;SELESAI&quot;"/>
+        </body>
+    </function>
+</flowgorithm>

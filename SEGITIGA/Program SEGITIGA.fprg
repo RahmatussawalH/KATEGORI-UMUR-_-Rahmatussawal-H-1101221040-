@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.6">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="RAHMATUSSAWAL H"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-10-31 11:10:52 AM"/>
+        <attribute name="created" value="UkFITUFUVVNTQVdBTCBIOyBSSE1ULVBDOyAyMDIyLTEwLTE4OyAxMDozMDoxNiBQTTsgMjk2Nw=="/>
+        <attribute name="edited" value="UkFITUFUVVNTQVdBTCBIOyBSSE1ULVBDOyAyMDIyLTEwLTMxOyAxMToxMDo1MiBBTTsgMjk0Ng=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="mulai, alas, tinggi, SA, SB, SC, luas, keliling" type="Integer" array="False" size=""/>
+            <output expression="&quot;MENCARI SEGITIGA&quot;"/>
+            <output expression="&quot;1. LUAS SEGITIGA&quot;"/>
+            <output expression="&quot;2. KELILING SEGITIGA&quot;"/>
+            <input variable="mulai"/>
+            <if expression="mulai&lt;=1">
+                <then>
+                    <output expression="&quot;LUAS SEGITIGA&quot;"/>
+                    <output expression="&quot;Masukan Alas Segitiga&quot;"/>
+                    <input variable="alas"/>
+                    <output expression="&quot;Masukan Tinggi Segitiga&quot;"/>
+                    <input variable="tinggi"/>
+                    <output expression="&quot;RUMUS : (L = 1/2 x alas x tinggi)&quot;"/>
+                    <assign variable="luas" expression="1/2*alas*tinggi"/>
+                    <output expression="&quot;L = 1/2 x &quot;&amp;alas&amp;&quot; x &quot;&amp;tinggi"/>
+                    <output expression="&quot;L = &quot;&amp;luas&amp;&quot; cm&quot;"/>
+                    <output expression="&quot;Jadi, Luas Segitiga Adalah &quot;&amp;luas&amp;&quot; cm&quot;"/>
+                </then>
+                <else>
+                    <output expression="&quot;LUAS SEGITIGA&quot;"/>
+                    <output expression="&quot;Masukan Sisi A Segitiga&quot;"/>
+                    <input variable="SA"/>
+                    <output expression="&quot;Masukan Sisi B Segitiga&quot;"/>
+                    <input variable="SB"/>
+                    <output expression="&quot;Masukan Sisi C Segitiga&quot;"/>
+                    <input variable="SC"/>
+                    <output expression="&quot;RUMUS : (K = sisiA + sisiB + sisiC)&quot;"/>
+                    <assign variable="keliling" expression="SA+SB+SC"/>
+                    <output expression="&quot;K = &quot;&amp;SA&amp;&quot; + &quot;&amp;SB&amp;&quot; + &quot;&amp;SC"/>
+                    <output expression="&quot;K = &quot;&amp;keliling&amp;&quot; cm&quot;"/>
+                    <output expression="&quot;Jadi, Keliling Segitiga Adalah &quot;&amp;keliling&amp;&quot; cm&quot;"/>
+                </else>
+            </if>
+            <output expression="&quot;SELESAI&quot;"/>
+        </body>
+    </function>
+</flowgorithm>
