@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.6">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="RAHMATUSSAWAL H"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-10-30 12:14:50 PM"/>
+        <attribute name="created" value="UkFITUFUVVNTQVdBTCBIOyBSSE1ULVBDOyAyMDIyLTEwLTI1OyAwNzo0OToyMyBQTTsgMjk3OQ=="/>
+        <attribute name="edited" value="UkFITUFUVVNTQVdBTCBIOyBSSE1ULVBDOyAyMDIyLTEwLTMwOyAxMjoxNDo1MCBQTTsgMjk2Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lahir, usia" type="Integer" array="False" size=""/>
+            <output expression="&quot;KATEGORI UMUR&quot;"/>
+            <output expression="&quot;Silahkan Masukan Tahun Lahir Anda&quot;"/>
+            <input variable="lahir"/>
+            <assign variable="usia" expression="2022-lahir"/>
+            <output expression="&quot;Usia Anda &quot;&amp; usia &amp;&quot; Tahun&quot;"/>
+            <output expression="&quot;Anda Termasuk Golongan&quot;"/>
+            <if expression="usia&lt;=11">
+                <then>
+                    <output expression="&quot;Anak-Anak&quot;"/>
+                </then>
+                <else>
+                    <if expression="usia&gt;=12 and usia&lt;=25">
+                        <then>
+                            <output expression="&quot;Remaja&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="usia&gt;=26 and usia&lt;=45">
+                                <then>
+                                    <output expression="&quot;Dewasa&quot;"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Lansia&quot;"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
