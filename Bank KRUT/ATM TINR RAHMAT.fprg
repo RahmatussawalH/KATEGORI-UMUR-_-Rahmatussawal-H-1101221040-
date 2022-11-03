@@ -2,29 +2,29 @@
 <flowgorithm fileversion="2.6">
     <attributes>
         <attribute name="name" value=""/>
-        <attribute name="authors" value="Roy Amrullah Ritonga"/>
+        <attribute name="authors" value="RAHMATUSSAWAL H"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2022-11-02 11:03:30 AM"/>
-        <attribute name="created" value="Um95IEFtcnVsbGFoIFJpdG9uZ2E7REVTS1RPUC1UUEZINk9HOzIwMjItMTEtMDE7MDc6MzQ6MjIgUE07NDI4OA=="/>
-        <attribute name="edited" value="UkFITUFUVVNTQVdBTCBIOyBSSE1ULVBDOyAyMDIyLTExLTAyOyAxMTowMzozMCBBTTsgMjk0Mw=="/>
+        <attribute name="saved" value="2022-11-03 01:31:38 PM"/>
+        <attribute name="created" value="UkFITUFUVVNTQVdBTCBIOyBSSE1ULVBDOyAyMDIyLTExLTAyOyAxMToxNjozNCBBTTsgMjk1MQ=="/>
+        <attribute name="edited" value="UkFITUFUVVNTQVdBTCBIOyBSSE1ULVBDOyAyMDIyLTExLTAzOyAwMTozMTozOCBQTTsgMjk2Nw=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
             <declare name="sa, vs" type="Integer" array="False" size=""/>
-            <declare name="c1, c2, m1, m2, p, t, s" type="Integer" array="False" size=""/>
+            <declare name="c1, c2, c3, m1, m2, p, t, s, tr" type="Integer" array="False" size=""/>
             <assign variable="m1" expression="3"/>
             <assign variable="c1" expression="0"/>
-            <output expression="&quot;ATM TINR&quot;"/>
+            <output expression="&quot;SELAMAT DATANG&quot;&amp;ToChar(13)&amp;&#13;&#10;&quot;BANK KRUT&quot;"/>
             <output expression="&quot;MASUKAN KARTU ATM&quot;"/>
-            <output expression="&quot;VALIDASI PIN&quot;&amp;ToChar(13)&amp;&#13;&#10;&quot;MASUKAN PIN&quot;"/>
+            <output expression="&quot;MASUKAN PIN&quot;"/>
             <input variable="vs"/>
             <output expression="&quot;1. LANJUTKAN TRANSAKSI&quot;&amp;ToChar(13)&amp;&#13;&#10;&quot;0. KELUAR&quot;"/>
             <input variable="t"/>
             <if expression="t = 1">
                 <then>
                     <while expression="c1 &lt; m1">
-                        <output expression="&quot;MASUKAN KODE PIN&quot;"/>
+                        <output expression="&quot;VALIDASI PIN&quot;&amp;ToChar(13)&amp;&#13;&#10;&quot;MASUKAN PIN ATM&quot;"/>
                         <input variable="sa"/>
                         <if expression="sa = vs">
                             <then>
@@ -33,31 +33,40 @@
                                 <assign variable="m2" expression="10"/>
                                 <assign variable="c2" expression="0"/>
                                 <assign variable="s" expression="0"/>
+                                <assign variable="tr" expression="0"/>
                                 <while expression="c2 &lt; m2">
                                     <input variable="p"/>
-                                    <declare name="st, tr, tb, n" type="Integer" array="False" size=""/>
+                                    <declare name="st, n, tb" type="Integer" array="False" size=""/>
                                     <if expression="p &gt;= 1 and p &lt;= 1">
                                         <then>
                                             <output expression="&quot;SETOR TUNAI&quot;"/>
+                                            <output expression="&quot;MASUKAN UANG&quot;"/>
                                             <output expression="&quot;MASUKAN NOMINAL SETORAN&quot;"/>
                                             <input variable="st"/>
                                             <assign variable="s" expression="s + st"/>
-                                            <output expression="&quot;JUMLAH TABUNGAN ANDA Rp &quot;&amp;s&amp;&quot;.000,00&quot;"/>
+                                            <output expression="&quot;JUMLAH TABUNGAN ANDA Rp &quot;&amp;s&amp;&quot;,00&quot;"/>
                                         </then>
                                         <else>
                                             <if expression="p &gt;= 2 and p &lt;= 2">
                                                 <then>
                                                     <output expression="&quot;TARIK TUNAI&quot;"/>
-                                                    <output expression="&quot;MASUKAN NOMINAL&quot;"/>
+                                                    <output expression="&quot;MASUKAN NOMINAL&quot;&amp;ToChar(13)&amp;&#13;&#10;&quot;KELIPATAN Rp. 50.000,00&quot;&amp;ToChar(13)&amp;&#13;&#10;&quot;MAKSIMUM PENARIKAN Rp. 1.250.000,00&quot;"/>
                                                     <input variable="tr"/>
-                                                    <if expression="tr &lt; s">
+                                                    <if expression="tr &lt;= 1250000">
                                                         <then>
-                                                            <assign variable="tb" expression="s - tr"/>
-                                                            <output expression="&quot;JUMLAH TABUNGAN ANDA Rp &quot;&amp;tb&amp;&quot;.000,00&quot;"/>
-                                                            <output expression="&quot;AMBIL UANG&quot;"/>
+                                                            <if expression="tr &lt;= s">
+                                                                <then>
+                                                                    <assign variable="tb" expression="s - tr"/>
+                                                                    <output expression="&quot;JUMLAH TABUNGAN ANDA Rp &quot;&amp;tb&amp;&quot;,00&quot;"/>
+                                                                    <output expression="&quot;AMBIL UANG&quot;"/>
+                                                                </then>
+                                                                <else>
+                                                                    <output expression="&quot;SALDO ANDA TIDAK MENCUKUPI&quot;"/>
+                                                                </else>
+                                                            </if>
                                                         </then>
                                                         <else>
-                                                            <output expression="&quot;SALDO ANDA TIDAK MENCUKUPI&quot;"/>
+                                                            <output expression="&quot;JUMLAH MAKSIMUM PENARIKAN Rp 1.250.000,00&quot;"/>
                                                         </else>
                                                     </if>
                                                 </then>
@@ -67,13 +76,13 @@
                                                             <output expression="&quot;TRANSFER&quot;"/>
                                                             <output expression="&quot;MASUKAN NOMINAL DITARIK&quot;"/>
                                                             <input variable="tr"/>
-                                                            <if expression="tr &lt; s">
+                                                            <if expression="tr &lt;= s">
                                                                 <then>
                                                                     <assign variable="tb" expression="s - tr"/>
                                                                     <output expression="&quot;MASUKAN NO REKENING&quot;"/>
                                                                     <input variable="n"/>
-                                                                    <output expression="&quot;TRANSFER SUKSES&quot;&amp;ToChar(13)&amp;&#13;&#10;&quot;Transfer Ke Rekening : &quot;&amp;n&amp;&quot; Nominal Transfer : Rp &quot;&amp;tr&amp;&quot;.000,00&quot;"/>
-                                                                    <output expression="&quot;JUMLAH TABUNGAN ANDA Rp &quot;&amp;tb&amp;&quot;.000,00&quot;"/>
+                                                                    <output expression="&quot;TRANSFER SUKSES&quot;&amp;ToChar(13)&amp;&#13;&#10;&quot;Transfer Ke Rekening : &quot;&amp;n&amp;&quot; Nominal Transfer : Rp &quot;&amp;tr&amp;&quot;,00&quot;"/>
+                                                                    <output expression="&quot;JUMLAH TABUNGAN ANDA Rp &quot;&amp;tb&amp;&quot;,00&quot;"/>
                                                                 </then>
                                                                 <else>
                                                                     <output expression="&quot;SALDO ANDA TIDAK MENCUKUPI&quot;"/>
@@ -84,7 +93,8 @@
                                                             <if expression="p &gt;= 4 and p &lt;= 4">
                                                                 <then>
                                                                     <output expression="&quot;CEK SALDO&quot;"/>
-                                                                    <output expression="&quot;JUMLAH SALDO ANDA Rp &quot;&amp;s&amp;&quot;.000,00&quot;"/>
+                                                                    <assign variable="tb" expression="s - tr"/>
+                                                                    <output expression="&quot;JUMLAH SALDO ANDA Rp &quot;&amp;tb&amp;&quot;,00&quot;"/>
                                                                 </then>
                                                                 <else/>
                                                             </if>
@@ -108,11 +118,12 @@
                                 </while>
                             </then>
                             <else>
-                                <output expression="&quot;COBA LAGI&quot;"/>
                                 <assign variable="c1" expression="c1 + 1"/>
+                                <output expression="&quot;PIN ATM SALAH&quot;"/>
                             </else>
                         </if>
                     </while>
+                    <output expression="&quot;KARTU ATM TERBLOKIR&quot;"/>
                 </then>
                 <else/>
             </if>
