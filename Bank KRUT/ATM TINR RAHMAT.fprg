@@ -4,9 +4,9 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="RAHMATUSSAWAL H"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2022-11-03 01:31:38 PM"/>
+        <attribute name="saved" value="2022-11-05 09:04:14 PM"/>
         <attribute name="created" value="UkFITUFUVVNTQVdBTCBIOyBSSE1ULVBDOyAyMDIyLTExLTAyOyAxMToxNjozNCBBTTsgMjk1MQ=="/>
-        <attribute name="edited" value="UkFITUFUVVNTQVdBTCBIOyBSSE1ULVBDOyAyMDIyLTExLTAzOyAwMTozMTozOCBQTTsgMjk2Nw=="/>
+        <attribute name="edited" value="UkFITUFUVVNTQVdBTCBIOyBSSE1ULVBDOyAyMDIyLTExLTA1OyAwOTowNDoxNCBQTTsgMjk3MQ=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -15,6 +15,8 @@
             <declare name="c1, c2, c3, m1, m2, p, t, s, tr" type="Integer" array="False" size=""/>
             <assign variable="m1" expression="3"/>
             <assign variable="c1" expression="0"/>
+            <assign variable="s" expression="0"/>
+            <assign variable="tr" expression="0"/>
             <output expression="&quot;SELAMAT DATANG&quot;&amp;ToChar(13)&amp;&#13;&#10;&quot;BANK KRUT&quot;"/>
             <output expression="&quot;MASUKAN KARTU ATM&quot;"/>
             <output expression="&quot;MASUKAN PIN&quot;"/>
@@ -32,8 +34,6 @@
                                 <output expression="&quot;PILIH TRANSAKSI&quot;&amp;ToChar(13)&amp;&#13;&#10;&quot;1. SETOR TUNAI&quot;&amp;ToChar(13)&amp;&#13;&#10;&quot;2. TARIK TUNAI&quot;&amp;ToChar(13)&amp;&#13;&#10;&quot;3. TRANSFER&quot;&amp;ToChar(13)&amp;&#13;&#10;&quot;4. CEK SALDO&quot;&amp;ToChar(13)&amp;&#13;&#10;&quot;0. KEMBALI&quot;"/>
                                 <assign variable="m2" expression="10"/>
                                 <assign variable="c2" expression="0"/>
-                                <assign variable="s" expression="0"/>
-                                <assign variable="tr" expression="0"/>
                                 <while expression="c2 &lt; m2">
                                     <input variable="p"/>
                                     <declare name="st, n, tb" type="Integer" array="False" size=""/>
@@ -74,7 +74,7 @@
                                                     <if expression="p &gt;= 3 and p &lt;= 3">
                                                         <then>
                                                             <output expression="&quot;TRANSFER&quot;"/>
-                                                            <output expression="&quot;MASUKAN NOMINAL DITARIK&quot;"/>
+                                                            <output expression="&quot;MASUKAN NOMINAL TRANSFER&quot;"/>
                                                             <input variable="tr"/>
                                                             <if expression="tr &lt;= s">
                                                                 <then>
